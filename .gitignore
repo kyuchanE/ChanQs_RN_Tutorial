@@ -189,3 +189,6 @@ temp/
 
 # 필요 시 source map 업로드 후 저장하지 않는 경우 ignore 유지
 # 만약 배포 디버깅을 위해 source map을 Git에 남기려면 위 *.map 규칙은 제거하세요.
+
+# 
+AGENTS.md
