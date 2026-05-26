@@ -1,11 +1,191 @@
-.htaccess
-css.php
-rpc/
-sites/site*/admin/
-sites/site*/private/
-sites/site*/public/admin/
-sites/site*/public/setup/
-sites/site*/public/theme/
-textpattern/
-HISTORY.txt
-README.txt
+# =========================================================
+# React Native .gitignore
+# - React Native CLI 기준
+# - Android / iOS / Node / Metro / IDE / OS 임시파일 포함
+# =========================================================
+
+
+# ---------------------------------------------------------
+# Node / Package Managers
+# ---------------------------------------------------------
+node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Yarn Berry / PnP
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Optional package manager caches
+.npm/
+.pnpm-store/
+
+
+# ---------------------------------------------------------
+# Environment Variables / Secrets
+# ---------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Local credentials / private keys
+*.pem
+*.key
+*.p8
+*.p12
+*.mobileprovision
+*.provisionprofile
+
+
+# ---------------------------------------------------------
+# React Native / Metro / Watchman
+# ---------------------------------------------------------
+.watchmanconfig
+.metro-health-check*
+.expo/
+.expo-shared/
+web-build/
+dist/
+
+
+# ---------------------------------------------------------
+# Test / Coverage
+# ---------------------------------------------------------
+coverage/
+.nyc_output/
+jest-html-reporters-attach/
+
+
+# ---------------------------------------------------------
+# Android
+# ---------------------------------------------------------
+android/.gradle/
+android/.idea/
+android/build/
+android/app/build/
+android/app/.cxx/
+android/app/.externalNativeBuild/
+android/app/intermediates/
+android/app/outputs/
+android/app/tmp/
+
+# Android local config
+android/local.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+.gradle/
+.kotlin/
+
+# Android generated / profiling
+*.hprof
+*.apk
+*.aab
+*.ap_
+*.dex
+
+
+# ---------------------------------------------------------
+# iOS
+# ---------------------------------------------------------
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcuserdata/
+ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcshareddata/WorkspaceSettings.xcsettings
+ios/*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# CocoaPods
+ios/Pods/
+
+# Ruby / Bundler
+.bundle/
+vendor/bundle/
+
+# Xcode user-specific files
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+
+# ---------------------------------------------------------
+# Fastlane
+# ---------------------------------------------------------
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+
+# ---------------------------------------------------------
+# macOS / Windows / Linux
+# ---------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+
+# ---------------------------------------------------------
+# Editor / IDE
+# ---------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+
+*.sublime-project
+*.sublime-workspace
+
+
+# ---------------------------------------------------------
+# Logs / Temp
+# ---------------------------------------------------------
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+
+
+# ---------------------------------------------------------
+# TypeScript / Build cache
+# ---------------------------------------------------------
+*.tsbuildinfo
+
+
+# ---------------------------------------------------------
+# Sentry / Crashlytics / Source maps
+# ---------------------------------------------------------
+*.jsbundle
+*.jsbundle.map
+*.map
+
+# 필요 시 source map 업로드 후 저장하지 않는 경우 ignore 유지
+# 만약 배포 디버깅을 위해 source map을 Git에 남기려면 위 *.map 규칙은 제거하세요.
