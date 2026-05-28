@@ -397,21 +397,18 @@ List 구현:
 - [x] `any` 사용 여부를 검색한다. 앱 코드와 `src`에는 `any` 사용이 없다.
 - [x] 불가피한 동적 값은 `unknown`으로 변경한다. 동적 payload와 error detail 기본 타입은 `unknown`으로 둔다.
 - [x] `unknown` 값에 type guard를 추가한다.
+- [x] `SafeAreaProvider`를 root에 연결한다.
+- [x] `QueryClient` 생성 파일을 추가한다.
+- [x] `QueryClientProvider`를 root에 연결한다.
+- [x] query 기본 stale time을 정의한다.
+- [x] query 기본 retry 정책을 정의한다.
+- [x] query cache clear helper를 정의한다.
+- [x] app bootstrap provider를 작성한다.
+- [x] token restore 완료 전 loading 상태를 정의한다.
+- [x] critical config loading 상태를 정의한다.
+- [x] bootstrap 실패 fallback UI를 정의한다.
 
 ### 진행 예정
-
-#### App Provider
-
-- [ ] `SafeAreaProvider`를 root에 연결한다.
-- [ ] `QueryClient` 생성 파일을 추가한다.
-- [ ] `QueryClientProvider`를 root에 연결한다.
-- [ ] query 기본 stale time을 정의한다.
-- [ ] query 기본 retry 정책을 정의한다.
-- [ ] query cache clear helper를 정의한다.
-- [ ] app bootstrap provider를 작성한다.
-- [ ] token restore 완료 전 loading 상태를 정의한다.
-- [ ] critical config loading 상태를 정의한다.
-- [ ] bootstrap 실패 fallback UI를 정의한다.
 
 #### Env 분리
 

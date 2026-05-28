@@ -92,6 +92,20 @@ AGENTS.md의 `공통 타입과 상수` TODO를 기준으로 다음 기반 파일
 
 앱 코드와 `src` 기준으로 `any` 사용 여부를 검색했고, 현재 `any` 사용은 없습니다.
 
+### 6. App Provider 구성
+
+Root 앱에 provider 구성을 연결했습니다.
+
+- `src/app/providers/queryClient.ts`: TanStack Query `QueryClient` 생성
+- 기본 query stale time: `60초`
+- 기본 query retry: 최대 `1회`, `401`, `403`, `404`는 재시도 제외
+- `clearQueryCache` helper 정의
+- `src/app/providers/AppBootstrapProvider.tsx`: 앱 bootstrap loading/error fallback UI 정의
+- `src/app/providers/AppProviders.tsx`: `SafeAreaProvider`, `QueryClientProvider`, `AppBootstrapProvider` composition
+- `App.tsx`: `AppProviders`를 root에 연결
+
+현재 bootstrap provider는 token restore와 critical config loading 단계를 상태로 분리해 둔 기반 구현입니다. 실제 token restore use case 연결은 Auth/Storage 구현 단계에서 이어갑니다.
+
 ## 실행 스크립트
 
 ```bash
@@ -123,9 +137,11 @@ npm run start -- --offline --port 8081
 - `npm install`: 성공
 - `npm run typecheck`: 성공
 - `npm run start -- --offline --port 8081`: Metro Bundler 기동 성공
+- `http://127.0.0.1:8081/index.bundle?platform=ios&dev=true&minify=false`: `200 OK`
 - Metro URL: `http://localhost:8081`
 
 참고: Expo CLI에서 `--offline`과 `--localhost`는 동시에 사용할 수 없어, 실행 검증은 `--offline` 단독 옵션으로 진행했습니다.
+참고: Expo CLI가 `src/app`을 Expo Router root로 감지하는 로그를 출력하지만, 현재 프로젝트에는 `expo-router` 의존성이 없고 `index.ts` 번들은 정상 생성됩니다.
 
 ## 현재 파일 구조
 
@@ -164,15 +180,13 @@ npm run start -- --offline --port 8081
 
 ## 다음 작업
 
-`AGENTS.md` TODO 기준으로 다음 단계는 App Provider 구성입니다.
+`AGENTS.md` TODO 기준으로 다음 단계는 Env 분리입니다.
 
-- `SafeAreaProvider` root 연결
-- `QueryClient` 생성 파일 추가
-- `QueryClientProvider` root 연결
-- query 기본 stale time/retry 정책 정의
-- query cache clear helper 정의
-- app bootstrap provider 작성
-- token restore/critical config loading 상태와 bootstrap 실패 fallback UI 정의
+- local/development/staging/production env 파일 규칙 정의
+- API URL, deep link scheme, feature flag, logging level env 값 정의
+- Expo config에서 env 읽기
+- runtime config adapter 작성
+- secret이 repository에 포함되지 않는지 확인
 
 ## 작업 메모
 
