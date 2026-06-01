@@ -131,6 +131,44 @@ EXPO_PUBLIC_LOGGING_LEVEL
 
 `EXPO_PUBLIC_` 값은 클라이언트 번들에 포함될 수 있으므로 secret을 넣지 않습니다.
 
+### 8. Storage Adapter 구성
+
+화면과 feature 코드가 AsyncStorage/SecureStore를 직접 import하지 않도록 `src/shared/storage`에 adapter와 helper를 추가했습니다.
+
+- `src/shared/storage/storageAdapters.ts`: AsyncStorage/SecureStore adapter interface
+- `src/shared/storage/asyncStorageAdapter.ts`: AsyncStorage string/json adapter
+- `src/shared/storage/secureStorageAdapter.ts`: SecureStore adapter와 availability check
+- `src/shared/storage/tokenStorage.ts`: access token, refresh token 저장/조회/삭제, token pair 저장/삭제
+- `src/shared/storage/appSettingsStorage.ts`: onboarding, theme, language, recent searches 저장/조회
+- `src/shared/storage/index.ts`: storage public export 정리
+
+저장소 사용 기준:
+
+- access token, refresh token: SecureStore
+- onboarding 완료 여부, theme, language, recent searches: AsyncStorage
+- 저장소에서 읽은 동적 값은 type guard로 검증 후 반환
+
+Storage adapter 수동 검증 절차:
+
+```ts
+import {
+  deleteTokenPair,
+  getAccessToken,
+  getOnboardingCompleted,
+  saveAccessToken,
+  saveOnboardingCompleted,
+} from './src/shared/storage';
+
+await saveAccessToken('access-token');
+await getAccessToken();
+await deleteTokenPair();
+
+await saveOnboardingCompleted(true);
+await getOnboardingCompleted();
+```
+
+위 코드는 Expo 런타임에서 실행해 SecureStore와 AsyncStorage 저장/조회/삭제 결과를 확인합니다. Node 단독 실행은 native module runtime이 없어 검증 대상이 아닙니다.
+
 ## 실행 스크립트
 
 ```bash
@@ -209,14 +247,14 @@ npx expo config --type public
 
 ## 다음 작업
 
-`AGENTS.md` TODO 기준으로 다음 단계는 Storage adapter 구현입니다.
+`AGENTS.md` TODO 기준으로 다음 단계는 Auth Domain 구현입니다.
 
-- AsyncStorage adapter interface/구현체 작성
-- Secure Storage adapter interface/구현체 작성
-- access token/refresh token 저장, 조회, 삭제 함수 작성
-- token 전체 삭제 함수 작성
-- 비민감 설정 저장/조회 함수 작성
-- storage adapter 단위 검증 절차 문서화
+- auth user entity 정의
+- token pair entity 정의
+- login credential entity 정의
+- auth repository interface 정의
+- login/logout/restore token/refresh token use case 정의
+- auth state/error type 정의
 
 ## 작업 메모
 

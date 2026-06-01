@@ -418,25 +418,22 @@ List 구현:
 - [x] Expo config에서 env를 읽는다.
 - [x] runtime config adapter를 작성한다.
 - [x] secret이 repository에 포함되지 않는지 확인한다.
+- [x] AsyncStorage adapter interface를 정의한다.
+- [x] AsyncStorage adapter 구현체를 작성한다.
+- [x] Secure Storage adapter interface를 정의한다.
+- [x] Secure Storage adapter 구현체를 작성한다.
+- [x] access token 저장 함수를 작성한다.
+- [x] access token 조회 함수를 작성한다.
+- [x] access token 삭제 함수를 작성한다.
+- [x] refresh token 저장 함수를 작성한다.
+- [x] refresh token 조회 함수를 작성한다.
+- [x] refresh token 삭제 함수를 작성한다.
+- [x] token 전체 삭제 함수를 작성한다.
+- [x] 비민감 설정 저장 함수를 작성한다.
+- [x] 비민감 설정 조회 함수를 작성한다.
+- [x] storage adapter 단위 검증 절차를 문서화한다.
 
 ### 진행 예정
-
-#### Storage
-
-- [ ] AsyncStorage adapter interface를 정의한다.
-- [ ] AsyncStorage adapter 구현체를 작성한다.
-- [ ] Secure Storage adapter interface를 정의한다.
-- [ ] Secure Storage adapter 구현체를 작성한다.
-- [ ] access token 저장 함수를 작성한다.
-- [ ] access token 조회 함수를 작성한다.
-- [ ] access token 삭제 함수를 작성한다.
-- [ ] refresh token 저장 함수를 작성한다.
-- [ ] refresh token 조회 함수를 작성한다.
-- [ ] refresh token 삭제 함수를 작성한다.
-- [ ] token 전체 삭제 함수를 작성한다.
-- [ ] 비민감 설정 저장 함수를 작성한다.
-- [ ] 비민감 설정 조회 함수를 작성한다.
-- [ ] storage adapter 단위 검증 절차를 문서화한다.
 
 #### Auth Domain
 
