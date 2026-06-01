@@ -106,6 +106,31 @@ Root 앱에 provider 구성을 연결했습니다.
 
 현재 bootstrap provider는 token restore와 critical config loading 단계를 상태로 분리해 둔 기반 구현입니다. 실제 token restore use case 연결은 Auth/Storage 구현 단계에서 이어갑니다.
 
+### 7. Env 분리
+
+환경별 public env 규칙과 runtime config adapter를 추가했습니다.
+
+- `.env.example`: 기본 예시 env
+- `.env.local.example`: local 환경 예시
+- `.env.development.example`: development 환경 예시
+- `.env.staging.example`: staging 환경 예시
+- `.env.production.example`: production 환경 예시
+- `app.config.ts`: Expo config에서 env를 읽어 `scheme`과 `extra.runtimeConfig`에 반영
+- `src/app/config/runtimeConfig.ts`: 앱 런타임에서 사용하는 config adapter
+- `.gitignore`: 실제 `.env`, `.env.local`, `.env.development`, `.env.staging`, `.env.production`은 ignore하고 `.env.*.example`만 추적 가능하도록 설정
+
+현재 사용하는 public env key:
+
+```text
+EXPO_PUBLIC_APP_ENV
+EXPO_PUBLIC_API_URL
+EXPO_PUBLIC_DEEP_LINK_SCHEME
+EXPO_PUBLIC_FEATURE_FLAGS
+EXPO_PUBLIC_LOGGING_LEVEL
+```
+
+`EXPO_PUBLIC_` 값은 클라이언트 번들에 포함될 수 있으므로 secret을 넣지 않습니다.
+
 ## 실행 스크립트
 
 ```bash
@@ -130,6 +155,7 @@ tsc --noEmit
 npm install
 npm run typecheck
 npm run start -- --offline --port 8081
+npx expo config --type public
 ```
 
 검증 결과:
@@ -137,6 +163,8 @@ npm run start -- --offline --port 8081
 - `npm install`: 성공
 - `npm run typecheck`: 성공
 - `npm run start -- --offline --port 8081`: Metro Bundler 기동 성공
+- `npx expo config --type public`: `extra.runtimeConfig` 기본값 출력 확인
+- env override를 적용한 `npx expo config --type public`: staging 값과 feature flag parsing 확인
 - `http://127.0.0.1:8081/index.bundle?platform=ios&dev=true&minify=false`: `200 OK`
 - Metro URL: `http://localhost:8081`
 
@@ -150,6 +178,7 @@ npm run start -- --offline --port 8081
 ├── AGENTS.md
 ├── App.tsx
 ├── README.md
+├── app.config.ts
 ├── app.json
 ├── assets/
 ├── index.ts
@@ -180,13 +209,14 @@ npm run start -- --offline --port 8081
 
 ## 다음 작업
 
-`AGENTS.md` TODO 기준으로 다음 단계는 Env 분리입니다.
+`AGENTS.md` TODO 기준으로 다음 단계는 Storage adapter 구현입니다.
 
-- local/development/staging/production env 파일 규칙 정의
-- API URL, deep link scheme, feature flag, logging level env 값 정의
-- Expo config에서 env 읽기
-- runtime config adapter 작성
-- secret이 repository에 포함되지 않는지 확인
+- AsyncStorage adapter interface/구현체 작성
+- Secure Storage adapter interface/구현체 작성
+- access token/refresh token 저장, 조회, 삭제 함수 작성
+- token 전체 삭제 함수 작성
+- 비민감 설정 저장/조회 함수 작성
+- storage adapter 단위 검증 절차 문서화
 
 ## 작업 메모
 

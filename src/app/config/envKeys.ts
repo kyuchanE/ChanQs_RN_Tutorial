@@ -1,4 +1,5 @@
 export const ENV_KEYS = {
+  APP_ENV: 'EXPO_PUBLIC_APP_ENV',
   API_URL: 'EXPO_PUBLIC_API_URL',
   DEEP_LINK_SCHEME: 'EXPO_PUBLIC_DEEP_LINK_SCHEME',
   FEATURE_FLAGS: 'EXPO_PUBLIC_FEATURE_FLAGS',
@@ -10,4 +11,3 @@ export type EnvKey = (typeof ENV_KEYS)[keyof typeof ENV_KEYS];
 export type AppEnvironment = 'local' | 'development' | 'staging' | 'production';
 
 export type LoggingLevel = 'debug' | 'info' | 'warn' | 'error' | 'silent';
-

@@ -407,22 +407,19 @@ List 구현:
 - [x] token restore 완료 전 loading 상태를 정의한다.
 - [x] critical config loading 상태를 정의한다.
 - [x] bootstrap 실패 fallback UI를 정의한다.
+- [x] local env 파일 규칙을 정한다.
+- [x] development env 파일 규칙을 정한다.
+- [x] staging env 파일 규칙을 정한다.
+- [x] production env 파일 규칙을 정한다.
+- [x] API URL env 값을 정의한다.
+- [x] deep link scheme env 값을 정의한다.
+- [x] feature flag env 값을 정의한다.
+- [x] logging level env 값을 정의한다.
+- [x] Expo config에서 env를 읽는다.
+- [x] runtime config adapter를 작성한다.
+- [x] secret이 repository에 포함되지 않는지 확인한다.
 
 ### 진행 예정
-
-#### Env 분리
-
-- [ ] local env 파일 규칙을 정한다.
-- [ ] development env 파일 규칙을 정한다.
-- [ ] staging env 파일 규칙을 정한다.
-- [ ] production env 파일 규칙을 정한다.
-- [ ] API URL env 값을 정의한다.
-- [ ] deep link scheme env 값을 정의한다.
-- [ ] feature flag env 값을 정의한다.
-- [ ] logging level env 값을 정의한다.
-- [ ] Expo config에서 env를 읽는다.
-- [ ] runtime config adapter를 작성한다.
-- [ ] secret이 repository에 포함되지 않는지 확인한다.
 
 #### Storage
 
