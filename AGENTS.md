@@ -432,71 +432,59 @@ List 구현:
 - [x] 비민감 설정 저장 함수를 작성한다.
 - [x] 비민감 설정 조회 함수를 작성한다.
 - [x] storage adapter 단위 검증 절차를 문서화한다.
+- [x] auth user entity를 정의한다.
+- [x] token pair entity를 정의한다.
+- [x] login credential entity를 정의한다.
+- [x] auth repository interface를 정의한다.
+- [x] login use case를 정의한다.
+- [x] logout use case를 정의한다.
+- [x] restore token use case를 정의한다.
+- [x] refresh token use case를 정의한다.
+- [x] auth state type을 정의한다.
+- [x] auth error type을 정의한다.
+- [x] login request DTO를 정의한다.
+- [x] login response DTO를 정의한다.
+- [x] refresh request DTO를 정의한다.
+- [x] refresh response DTO를 정의한다.
+- [x] profile response DTO를 정의한다.
+- [x] auth DTO mapper를 작성한다.
+- [x] auth remote data source interface를 정의한다.
+- [x] auth remote data source 구현체를 작성한다.
+- [x] auth local data source interface를 정의한다.
+- [x] auth local data source 구현체를 작성한다.
+- [x] auth repository 구현체를 작성한다.
+- [x] auth store state type을 정의한다.
+- [x] auth store action type을 정의한다.
+- [x] initial auth state를 정의한다.
+- [x] set authenticated action을 작성한다.
+- [x] set unauthenticated action을 작성한다.
+- [x] set restoring action을 작성한다.
+- [x] set profile action을 작성한다.
+- [x] clear auth action을 작성한다.
+- [x] auth selector를 작성한다.
+- [x] logout 시 store 초기화를 연결한다.
+- [x] axios baseURL을 설정한다.
+- [x] axios timeout을 설정한다.
+- [x] axios default header를 설정한다.
+- [x] request interceptor를 추가한다.
+- [x] request interceptor에서 access token을 조회한다.
+- [x] Authorization header 추가 로직을 작성한다.
+- [x] response interceptor를 추가한다.
+- [x] 401 status 감지 로직을 작성한다.
+- [x] `_retry` 플래그 type을 확장한다.
+- [x] refresh token 조회 로직을 작성한다.
+- [x] token refresh 요청 함수를 작성한다.
+- [x] refresh 성공 시 token 저장 로직을 작성한다.
+- [x] refresh 성공 시 원 요청 재시도 로직을 작성한다.
+- [x] refresh 실패 시 logout 로직을 호출한다.
+- [x] refresh token이 없을 때 logout 로직을 호출한다.
+- [x] 중복 refresh 방지 mutex를 작성한다.
+- [x] 대기 요청 queue를 작성한다.
+- [x] queue 성공 처리 로직을 작성한다.
+- [x] queue 실패 처리 로직을 작성한다.
+- [x] 무한 재시도 방지 동작을 확인한다. `_retry` 플래그와 `npm run typecheck`로 검증했다.
 
 ### 진행 예정
-
-#### Auth Domain
-
-- [ ] auth user entity를 정의한다.
-- [ ] token pair entity를 정의한다.
-- [ ] login credential entity를 정의한다.
-- [ ] auth repository interface를 정의한다.
-- [ ] login use case를 정의한다.
-- [ ] logout use case를 정의한다.
-- [ ] restore token use case를 정의한다.
-- [ ] refresh token use case를 정의한다.
-- [ ] auth state type을 정의한다.
-- [ ] auth error type을 정의한다.
-
-#### Auth Data
-
-- [ ] login request DTO를 정의한다.
-- [ ] login response DTO를 정의한다.
-- [ ] refresh request DTO를 정의한다.
-- [ ] refresh response DTO를 정의한다.
-- [ ] profile response DTO를 정의한다.
-- [ ] auth DTO mapper를 작성한다.
-- [ ] auth remote data source interface를 정의한다.
-- [ ] auth remote data source 구현체를 작성한다.
-- [ ] auth local data source interface를 정의한다.
-- [ ] auth local data source 구현체를 작성한다.
-- [ ] auth repository 구현체를 작성한다.
-
-#### Zustand Auth Store
-
-- [ ] auth store state type을 정의한다.
-- [ ] auth store action type을 정의한다.
-- [ ] initial auth state를 정의한다.
-- [ ] set authenticated action을 작성한다.
-- [ ] set unauthenticated action을 작성한다.
-- [ ] set restoring action을 작성한다.
-- [ ] set profile action을 작성한다.
-- [ ] clear auth action을 작성한다.
-- [ ] auth selector를 작성한다.
-- [ ] logout 시 store 초기화를 연결한다.
-
-#### Axios Instance
-
-- [ ] axios baseURL을 설정한다.
-- [ ] axios timeout을 설정한다.
-- [ ] axios default header를 설정한다.
-- [ ] request interceptor를 추가한다.
-- [ ] request interceptor에서 access token을 조회한다.
-- [ ] Authorization header 추가 로직을 작성한다.
-- [ ] response interceptor를 추가한다.
-- [ ] 401 status 감지 로직을 작성한다.
-- [ ] `_retry` 플래그 type을 확장한다.
-- [ ] refresh token 조회 로직을 작성한다.
-- [ ] token refresh 요청 함수를 작성한다.
-- [ ] refresh 성공 시 token 저장 로직을 작성한다.
-- [ ] refresh 성공 시 원 요청 재시도 로직을 작성한다.
-- [ ] refresh 실패 시 logout 로직을 호출한다.
-- [ ] refresh token이 없을 때 logout 로직을 호출한다.
-- [ ] 중복 refresh 방지 mutex를 작성한다.
-- [ ] 대기 요청 queue를 작성한다.
-- [ ] queue 성공 처리 로직을 작성한다.
-- [ ] queue 실패 처리 로직을 작성한다.
-- [ ] 무한 재시도 방지 동작을 확인한다.
 
 #### Navigation
 

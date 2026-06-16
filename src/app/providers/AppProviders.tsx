@@ -2,8 +2,11 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import type { PropsWithChildren } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { configureAuthRuntime } from '../../features/auth/presentation/authRuntime';
 import { AppBootstrapProvider } from './AppBootstrapProvider';
 import { queryClient } from './queryClient';
+
+configureAuthRuntime();
 
 export function AppProviders({ children }: PropsWithChildren) {
   return (
@@ -14,4 +17,3 @@ export function AppProviders({ children }: PropsWithChildren) {
     </SafeAreaProvider>
   );
 }
-

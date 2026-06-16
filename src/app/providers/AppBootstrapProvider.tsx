@@ -2,6 +2,9 @@ import type { PropsWithChildren } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { restoreTokenUseCase } from '../../features/auth/data';
+import { useAuthStore } from '../../features/auth/presentation/store/authStore';
+
 type BootstrapStatus = 'loading' | 'ready' | 'error';
 
 type BootstrapPhase = 'tokenRestore' | 'criticalConfig';
@@ -27,7 +30,21 @@ const loadingMessageByPhase: Record<BootstrapPhase, string> = {
 };
 
 const restoreStoredTokens = async (): Promise<void> => {
-  await Promise.resolve();
+  const authStore = useAuthStore.getState();
+
+  authStore.setRestoring();
+
+  const tokenPair = await restoreTokenUseCase.execute();
+
+  if (tokenPair === null) {
+    authStore.setUnauthenticated();
+    return;
+  }
+
+  authStore.setAuthenticated({
+    user: null,
+    tokenPair,
+  });
 };
 
 const loadCriticalConfig = async (): Promise<void> => {
@@ -176,4 +193,3 @@ const styles = StyleSheet.create({
     color: '#ffffff',
   },
 });
-
