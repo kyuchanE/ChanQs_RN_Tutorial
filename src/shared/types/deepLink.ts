@@ -6,4 +6,3 @@ export interface ParsedPostDeepLink {
 }
 
 export type ParsedDeepLink = ParsedPostDeepLink | null;
-

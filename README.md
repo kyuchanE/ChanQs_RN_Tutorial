@@ -169,6 +169,31 @@ await getOnboardingCompleted();
 
 위 코드는 Expo 런타임에서 실행해 SecureStore와 AsyncStorage 저장/조회/삭제 결과를 확인합니다. Node 단독 실행은 native module runtime이 없어 검증 대상이 아닙니다.
 
+### 9. Navigation과 Deep Link 구성
+
+React Navigation 기반의 RootStack, 하단 MainTabs, 탭별 중첩 Stack을 연결했습니다.
+
+- 첫 번째 탭: `로그인/마이페이지`
+- 두 번째 탭: `게시글목록`
+- 세 번째 탭: `친구목록`
+- 게시글 상세 route param: `id: number`
+- 게시글 상세 deep link path: `posts/{id}`
+
+Deep link 수동 검증 절차:
+
+```bash
+npm run start
+npx uri-scheme open "chanqs-rn-tutorial://posts/1" --ios
+npx uri-scheme open "chanqs-rn-tutorial://posts/1" --android
+```
+
+검증 기준:
+
+- `chanqs-rn-tutorial://posts/1` 진입 시 게시글 상세 화면에서 `ID 1`을 확인한다.
+- 잘못된 게시글 id는 fallback id `1`로 보정된다.
+- 미인증 상태에서 `chanqs-rn-tutorial://account/my-page`로 진입하면 로그인 화면으로 redirect된다.
+- notification payload의 `path` 또는 `postId`는 deep link route resolver와 동일한 경로 해석 함수를 사용한다.
+
 ## 실행 스크립트
 
 ```bash

@@ -483,41 +483,35 @@ List 구현:
 - [x] queue 성공 처리 로직을 작성한다.
 - [x] queue 실패 처리 로직을 작성한다.
 - [x] 무한 재시도 방지 동작을 확인한다. `_retry` 플래그와 `npm run typecheck`로 검증했다.
+- [x] root stack param list type을 정의한다.
+- [x] main tab param list type을 정의한다.
+- [x] login or mypage stack param list type을 정의한다.
+- [x] posts stack param list type을 정의한다.
+- [x] friends stack param list type을 정의한다.
+- [x] navigation container를 연결한다.
+- [x] linking config를 navigation container에 연결한다.
+- [x] RootStack navigator를 작성한다.
+- [x] AuthFlow navigator를 작성한다.
+- [x] MainTabs navigator를 작성한다.
+- [x] LoginOrMyPageStack navigator를 작성한다.
+- [x] PostsStack navigator를 작성한다.
+- [x] FriendsStack navigator를 작성한다.
+- [x] 첫 번째 tab label을 `로그인/마이페이지`로 설정한다.
+- [x] 두 번째 tab label을 `게시글목록`으로 설정한다.
+- [x] 세 번째 tab label을 `친구목록`으로 설정한다.
+- [x] 인증 상태에 따른 첫 번째 tab screen 분기 로직을 작성한다.
+- [x] 게시글 상세 route param으로 `id`를 정의한다.
+- [x] 게시글 목록에서 상세로 이동하는 navigation helper를 작성한다.
+- [x] app scheme을 정의한다.
+- [x] `posts/{id}` path를 linking config에 추가한다.
+- [x] post id parse 함수를 작성한다.
+- [x] 잘못된 post id fallback을 작성한다.
+- [x] auth 필요 route 판별 함수를 작성한다.
+- [x] 미인증 상태 redirect 로직을 작성한다.
+- [x] notification route resolver와 deep link resolver를 공유한다.
+- [x] deep link 수동 검증 절차를 문서화한다.
 
 ### 진행 예정
-
-#### Navigation
-
-- [ ] root stack param list type을 정의한다.
-- [ ] main tab param list type을 정의한다.
-- [ ] login or mypage stack param list type을 정의한다.
-- [ ] posts stack param list type을 정의한다.
-- [ ] friends stack param list type을 정의한다.
-- [ ] navigation container를 연결한다.
-- [ ] linking config를 navigation container에 연결한다.
-- [ ] RootStack navigator를 작성한다.
-- [ ] AuthFlow navigator를 작성한다.
-- [ ] MainTabs navigator를 작성한다.
-- [ ] LoginOrMyPageStack navigator를 작성한다.
-- [ ] PostsStack navigator를 작성한다.
-- [ ] FriendsStack navigator를 작성한다.
-- [ ] 첫 번째 tab label을 `로그인/마이페이지`로 설정한다.
-- [ ] 두 번째 tab label을 `게시글목록`으로 설정한다.
-- [ ] 세 번째 tab label을 `친구목록`으로 설정한다.
-- [ ] 인증 상태에 따른 첫 번째 tab screen 분기 로직을 작성한다.
-- [ ] 게시글 상세 route param으로 `id`를 정의한다.
-- [ ] 게시글 목록에서 상세로 이동하는 navigation helper를 작성한다.
-
-#### Deep Link
-
-- [ ] app scheme을 정의한다.
-- [ ] `posts/{id}` path를 linking config에 추가한다.
-- [ ] post id parse 함수를 작성한다.
-- [ ] 잘못된 post id fallback을 작성한다.
-- [ ] auth 필요 route 판별 함수를 작성한다.
-- [ ] 미인증 상태 redirect 로직을 작성한다.
-- [ ] notification route resolver와 deep link resolver를 공유한다.
-- [ ] deep link 수동 검증 절차를 문서화한다.
 
 #### Posts Domain
 
