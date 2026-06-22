@@ -511,63 +511,78 @@ List 구현:
 - [x] notification route resolver와 deep link resolver를 공유한다.
 - [x] deep link 수동 검증 절차를 문서화한다.
 
-### 진행 예정
-
 #### Posts Domain
 
-- [ ] post entity를 정의한다.
-- [ ] post id type을 정의한다.
-- [ ] post list item type을 정의한다.
-- [ ] posts repository interface를 정의한다.
-- [ ] get posts use case를 정의한다.
-- [ ] get post detail use case를 정의한다.
-- [ ] posts domain error type을 정의한다.
+- [x] post entity를 정의한다.
+- [x] post id type을 정의한다.
+- [x] post list item type을 정의한다.
+- [x] posts repository interface를 정의한다.
+- [x] get posts use case를 정의한다.
+- [x] get post detail use case를 정의한다.
+- [x] posts domain error type을 정의한다.
 
 #### Posts Data
 
-- [ ] post response DTO를 정의한다.
-- [ ] post detail response DTO를 정의한다.
-- [ ] post DTO mapper를 작성한다.
-- [ ] posts remote data source interface를 정의한다.
-- [ ] posts remote data source 구현체를 작성한다.
-- [ ] `GET /posts` 호출 함수를 작성한다.
-- [ ] `GET /posts/{id}` 호출 함수를 작성한다.
-- [ ] posts repository 구현체를 작성한다.
-- [ ] posts API가 공통 axios instance를 사용하는지 확인한다.
+- [x] post response DTO를 정의한다.
+- [x] post detail response DTO를 정의한다.
+- [x] post DTO mapper를 작성한다.
+- [x] posts remote data source interface를 정의한다.
+- [x] posts remote data source 구현체를 작성한다.
+- [x] `GET /posts` 호출 함수를 작성한다.
+- [x] `GET /posts/{id}` 호출 함수를 작성한다.
+- [x] posts repository 구현체를 작성한다.
+- [x] posts API가 공통 axios instance를 사용하는지 확인한다.
 
 #### Posts Query
 
-- [ ] posts query key factory를 작성한다.
-- [ ] posts list query hook을 작성한다.
-- [ ] post detail query hook을 작성한다.
-- [ ] posts list stale time을 명시한다.
-- [ ] post detail stale time을 명시한다.
-- [ ] refetch on mount 정책을 명시한다.
-- [ ] refetch on reconnect 정책을 명시한다.
-- [ ] posts query error mapping을 작성한다.
+- [x] posts query key factory를 작성한다.
+- [x] posts list query hook을 작성한다.
+- [x] post detail query hook을 작성한다.
+- [x] posts list stale time을 명시한다.
+- [x] post detail stale time을 명시한다.
+- [x] refetch on mount 정책을 명시한다.
+- [x] refetch on reconnect 정책을 명시한다.
+- [x] posts query error mapping을 작성한다.
 
 #### Posts Presentation
 
-- [ ] posts list screen props type을 정의한다.
-- [ ] posts list item component props type을 정의한다.
-- [ ] posts list item component를 작성한다.
-- [ ] posts list screen을 작성한다.
-- [ ] posts list `FlatList`를 연결한다.
-- [ ] posts list keyExtractor를 id 기반으로 작성한다.
-- [ ] posts list loading UI를 연결한다.
-- [ ] posts list error UI를 연결한다.
-- [ ] posts list retry UI를 연결한다.
-- [ ] posts list empty UI를 연결한다.
-- [ ] posts item `Pressable`을 작성한다.
-- [ ] item press 시 post id를 route param으로 전달한다.
-- [ ] post detail screen props type을 정의한다.
-- [ ] post detail screen을 작성한다.
-- [ ] post detail route param id를 읽는다.
-- [ ] post detail query를 연결한다.
-- [ ] post detail loading UI를 연결한다.
-- [ ] post detail error UI를 연결한다.
-- [ ] post detail retry UI를 연결한다.
-- [ ] post detail content UI를 작성한다.
+- [x] posts list screen props type을 정의한다.
+- [x] posts list item component props type을 정의한다.
+- [x] posts list item component를 작성한다.
+- [x] posts list screen을 작성한다.
+- [x] posts list `FlatList`를 연결한다.
+- [x] posts list keyExtractor를 id 기반으로 작성한다.
+- [x] posts list loading UI를 연결한다.
+- [x] posts list error UI를 연결한다.
+- [x] posts list retry UI를 연결한다.
+- [x] posts list empty UI를 연결한다.
+- [x] posts item `Pressable`을 작성한다.
+- [x] item press 시 post id를 route param으로 전달한다.
+- [x] post detail screen props type을 정의한다.
+- [x] post detail screen을 작성한다.
+- [x] post detail route param id를 읽는다.
+- [x] post detail query를 연결한다.
+- [x] post detail loading UI를 연결한다.
+- [x] post detail error UI를 연결한다.
+- [x] post detail retry UI를 연결한다.
+- [x] post detail content UI를 작성한다.
+
+#### Shared UI
+
+- [x] 공통 loading component props type을 정의한다.
+- [x] 공통 loading component를 작성한다.
+- [x] 공통 error component props type을 정의한다.
+- [x] 공통 error component를 작성한다.
+- [x] 공통 retry button을 작성한다.
+- [x] 공통 empty state component props type을 정의한다.
+- [x] 공통 empty state component를 작성한다.
+- [x] 공통 screen container component를 작성한다.
+- [x] 공통 list separator component를 작성한다.
+
+### 진행 예정
+
+#### Posts Presentation
+
 - [ ] post detail navigation back 동작을 확인한다.
 
 #### Friends Domain
@@ -647,15 +662,6 @@ List 구현:
 
 #### Shared UI
 
-- [ ] 공통 loading component props type을 정의한다.
-- [ ] 공통 loading component를 작성한다.
-- [ ] 공통 error component props type을 정의한다.
-- [ ] 공통 error component를 작성한다.
-- [ ] 공통 retry button을 작성한다.
-- [ ] 공통 empty state component props type을 정의한다.
-- [ ] 공통 empty state component를 작성한다.
-- [ ] 공통 screen container component를 작성한다.
-- [ ] 공통 list separator component를 작성한다.
 - [ ] 공통 avatar component를 작성한다.
 - [ ] 공통 form field component 필요 여부를 검토한다.
 
