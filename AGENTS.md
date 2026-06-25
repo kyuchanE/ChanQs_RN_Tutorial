@@ -566,6 +566,7 @@ List 구현:
 - [x] post detail error UI를 연결한다.
 - [x] post detail retry UI를 연결한다.
 - [x] post detail content UI를 작성한다.
+- [x] post detail navigation back 동작을 확인한다. `PostsStack`의 `PostDetailScreen`이 같은 native stack의 `PostsListScreen` 다음 화면으로 등록되어 기본 header back 동작을 사용한다.
 
 #### Shared UI
 
@@ -579,54 +580,54 @@ List 구현:
 - [x] 공통 screen container component를 작성한다.
 - [x] 공통 list separator component를 작성한다.
 
-### 진행 예정
-
-#### Posts Presentation
-
-- [ ] post detail navigation back 동작을 확인한다.
-
 #### Friends Domain
 
-- [ ] friend entity를 정의한다.
-- [ ] friend id type을 정의한다.
-- [ ] friends repository interface를 정의한다.
-- [ ] get friends use case를 정의한다.
-- [ ] friends domain error type을 정의한다.
+- [x] friend entity를 정의한다.
+- [x] friend id type을 정의한다.
+- [x] friends repository interface를 정의한다.
+- [x] get friends use case를 정의한다.
+- [x] friends domain error type을 정의한다.
 
 #### Friends Data
 
-- [ ] friend response DTO를 정의한다.
-- [ ] friend DTO mapper를 작성한다.
-- [ ] friends remote data source interface를 정의한다.
-- [ ] friends remote data source 구현체를 작성한다.
-- [ ] `GET /users` 호출 함수를 작성한다.
-- [ ] friends repository 구현체를 작성한다.
-- [ ] friends API가 공통 axios instance를 사용하는지 확인한다.
+- [x] friend response DTO를 정의한다.
+- [x] friend DTO mapper를 작성한다.
+- [x] friends remote data source interface를 정의한다.
+- [x] friends remote data source 구현체를 작성한다.
+- [x] `GET /users` 호출 함수를 작성한다.
+- [x] friends repository 구현체를 작성한다.
+- [x] friends API가 공통 axios instance를 사용하는지 확인한다.
 
 #### Friends Query
 
-- [ ] friends query key factory를 작성한다.
-- [ ] friends list query hook을 작성한다.
-- [ ] friends list stale time을 명시한다.
-- [ ] refetch on mount 정책을 명시한다.
-- [ ] refetch on reconnect 정책을 명시한다.
-- [ ] friends query error mapping을 작성한다.
+- [x] friends query key factory를 작성한다.
+- [x] friends list query hook을 작성한다.
+- [x] friends list stale time을 명시한다.
+- [x] refetch on mount 정책을 명시한다.
+- [x] refetch on reconnect 정책을 명시한다.
+- [x] friends query error mapping을 작성한다.
 
 #### Friends Presentation
 
-- [ ] friends list screen props type을 정의한다.
-- [ ] friend list item component props type을 정의한다.
-- [ ] friend list item component를 작성한다.
-- [ ] friends list screen을 작성한다.
-- [ ] friends list `FlatList`를 연결한다.
-- [ ] friends list keyExtractor를 id 기반으로 작성한다.
-- [ ] friends list loading UI를 연결한다.
-- [ ] friends list error UI를 연결한다.
-- [ ] friends list retry UI를 연결한다.
-- [ ] friends list empty UI를 연결한다.
-- [ ] friend profile image `Image`를 연결한다.
-- [ ] friend profile placeholder UI를 작성한다.
-- [ ] SectionList 필요 여부를 검토한다.
+- [x] friends list screen props type을 정의한다.
+- [x] friend list item component props type을 정의한다.
+- [x] friend list item component를 작성한다.
+- [x] friends list screen을 작성한다.
+- [x] friends list `FlatList`를 연결한다.
+- [x] friends list keyExtractor를 id 기반으로 작성한다.
+- [x] friends list loading UI를 연결한다.
+- [x] friends list error UI를 연결한다.
+- [x] friends list retry UI를 연결한다.
+- [x] friends list empty UI를 연결한다.
+- [x] friend profile image `Image`를 연결한다.
+- [x] friend profile placeholder UI를 작성한다.
+- [x] SectionList 필요 여부를 검토한다. 현재는 그룹 요구가 없어 `FlatList`를 사용한다.
+
+#### 검증
+
+- [x] TypeScript type check를 실행한다. `npm run typecheck`로 검증했다.
+
+### 진행 예정
 
 #### Login Presentation
 
@@ -775,7 +776,6 @@ List 구현:
 
 #### 검증
 
-- [ ] TypeScript type check를 실행한다.
 - [ ] lint script를 실행한다.
 - [ ] Expo app start를 실행한다.
 - [ ] posts list API 조회를 확인한다.
